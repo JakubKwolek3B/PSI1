@@ -9,15 +9,29 @@
 </head>
 
 <body>
-    <header><h1>Suma</h1></header>
+    <header>
+        <h1>Suma</h1>
+    </header>
     <main>
-        <input id="num1">
-        <input id="num2">
-        <button id="sum">SUMA</button>
+        <label><input type="number" placeholder="np. 10" id="num1"></label>
+        <label><input type="number" placeholder="np. 5" id="num2"></label>
+        <button>SUMA</button>
         <p id="result"></p>
     </main>
     <footer></footer>
-    <script></script>
+    <script>
+        const num1 = document.querySelector('#num1');
+        const num2 = document.querySelector('#num2');
+        const btn = document.querySelector('button');
+        const p = document.querySelector('#result');
+        btn.addEventListener('click', sumNum);
+        console.log(num1, num2, btn, p);
+
+        function sumNum() {
+            const sum = num1.value * 1 + num2.value * 1;
+            p.innerText = `Wynik: ${sum}`;
+        }
+    </script>
 </body>
 
 </html>
